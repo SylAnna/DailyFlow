@@ -1,0 +1,34 @@
+{% extends 'template.html' %}
+
+{% block title %}Home | Daily Flow {% endblock %}
+
+{% block content %}
+<div class="home-container">
+
+    
+    <div class="welcome-section">
+        <h2 class="welcome-title">Welcome to Daily Flow</h2>
+        <p class="welcome-description">
+            Through this website, you will be able to efficiently manage your tasks. By using a built-in calender: Easily add, Complete, and Organize your tasks by catergory all in one simple click. It also ensures that you remain productive so that you can become the biggest academic weapon there is!
+        </p>
+    </div>
+
+   
+    <div class="quick-start-panel">
+        <h2 class="quick-start-title">Quick Access</h2>
+        <div class="quick-start-links">
+            <a href="{% url 'todos' %}" class="quick-link todo-link">📝 To-Do</a>
+            <a href="{% url 'calendar' %}" class="quick-link calendar-link">📅 Calendar</a>
+        </div>
+    </div>
+
+   
+    <div class="motivation-widget">
+        <h2 class="motivation-title">💡 Daily Motivation</h2>
+        <blockquote class="motivation-quote">
+            "Once you learn to hit, teach yourself to never miss again." — The Weeknd
+        </blockquote>
+    </div>
+
+</div>
+{% endblock %}

@@ -1,0 +1,75 @@
+{% extends 'template.html' %}
+
+{% block title %}Todo List{% endblock %}
+
+{% block content %}
+<div class="container mt-4">
+    <h1 style="font-weight: bold;" class="mb-4">TO-DO LIST</h1>
+
+  <!--Add task item-->
+    <div class="add-task-form mb-4">
+        <form method="POST">
+            {% csrf_token %}
+            {{ form.as_p }}  
+            <button type="submit" class="btn-addtask">Add Activity</button>
+        </form>
+    </div>
+
+    <!--Pop up messages: allows to exit popup by pressing x-->
+    {% if messages %}
+        {% for message in messages %}
+            <div class="alert alert-info alert-dismissible fade show" role="alert">
+                <strong>Success!</strong> {{ message }}
+                <button type="button" class="btn-close btn-sm" data-bs-dismiss="alert" aria-label="Close"> X </button>
+            </div>
+        {% endfor %}
+    {% endif %}
+
+    <!-- Link to go to Calendar-->
+ <h1 class="lnk-to-cal"><a href="{% url 'calendar' %}"> Go To Calendar</a></h1>
+
+    <!-- Todo List Table -->
+    {% if all_items %}
+        <table class="table table-bordered table-striped todo-table">
+            <thead>
+                <tr class="table-light">
+                    <th>Task</th>
+                    <th>Category</th>
+                    <th>Status</th>
+                    <th>Actions</th>
+                </tr>
+            </thead>
+            <tbody>
+                {% for things in all_items %}
+                <tr class="table-secondary">
+                    <td>
+                        <a href="{% url 'edit' things.id %}" class="task-link {% if things.completed %}striker{% endif %}">
+                            {{ things.item }}
+                        </a>
+                    </td>
+                    <td>
+                        <span class="spn-category">
+                            {{ things.category.name }}
+                        </span>
+                    </td>
+                    <td class="text-center">
+                        {% if things.completed %}
+                            <a href="{% url 'uncross' things.id %}" class="btn-uncross">Uncross</a>
+                        {% else %}
+                            <a href="{% url 'cross_off' things.id %}" class="btn-complete">Complete</a>
+                        {% endif %}
+                    </td>
+                    <td class="text-center">
+                        <a href="{% url 'delete' things.id %}" class="btn-delete">Delete</a>
+                    </td>
+                </tr>
+                {% endfor %}
+               
+            </tbody>
+        </table>
+    {% else %}
+        <p>No todo items yet. Add some!</p> <!--Display message if no items in table-->
+    {% endif %}
+   
+</div>
+{% endblock %}

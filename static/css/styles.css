@@ -1,0 +1,329 @@
+/* General Page Layout */
+body {
+    background-color: #f7fafc; 
+    color: #1a202c; 
+    font-family: sans-serif;
+}
+
+/* Navbar Styles */
+.navbar {
+    background-color: white;
+    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+}
+
+.navbar-container {
+    max-width: 7xl;
+    margin: 0 auto;
+    padding: 16px;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+
+.navbar-title {
+    font-size: 1.5rem;
+    font-weight: bold;
+    color: #3182ce; 
+}
+
+.desktop-nav {
+    display: none;
+    gap: 24px;
+}
+
+.nav-link {
+    color: #4a5568; 
+    text-decoration: none;
+}
+
+.nav-link:hover {
+    color: #3182ce; 
+}
+
+/* Mobile Menu Button */
+.mobile-menu-btn {
+    display: block;
+}
+
+.menu-button {
+    background: none;
+    border: none;
+    color: #4a5568;
+    outline: none;
+}
+
+.menu-icon {
+    width: 24px;
+    height: 24px;
+}
+
+/* Mobile Menu Styles */
+.mobile-menu {
+    display: none;
+    padding: 16px;
+}
+
+.mobile-nav-link {
+    display: block;
+    padding: 8px 0;
+    color: #4a5568;
+    text-decoration: none;
+}
+
+.mobile-nav-link:hover {
+    color: #3182ce; 
+}
+
+/* Main Content Area */
+.main-content {
+    max-width: 7xl;
+    margin: 0 auto;
+    padding: 24px;
+}
+
+/* Footer Styles */
+.footer {
+    background-color: white;
+    border-top: 1px solid #e2e8f0; 
+    text-align: center;
+    padding: 16px;
+    font-size: 0.875rem; 
+    color: #6b7280; 
+}
+/* General Layout */
+.home-container {
+    display: grid;
+    gap: 1.5rem;
+}
+
+/* Welcome Section */
+.welcome-section {
+    background-color: white;
+    padding: 1.5rem;
+    border-radius: 1rem;
+    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+}
+
+.welcome-title {
+    font-size: 1.5rem;
+    font-weight: bold;
+    color: #3182ce;
+    margin-bottom: 0.5rem;
+}
+
+.welcome-description {
+    color: #4a5568;
+    line-height: 1.6;
+}
+
+/* Quick Start Panel */
+.quick-start-panel {
+    background-color: white;
+    padding: 1.5rem;
+    border-radius: 1rem;
+    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+}
+
+.quick-start-title {
+    font-size: 1.25rem;
+    font-weight: 600;
+    margin-bottom: 1rem;
+}
+
+.quick-start-links {
+    display: grid;
+    grid-template-columns: repeat(2, 1fr);
+    gap: 1rem;
+    text-align: center;
+}
+
+.quick-link {
+    padding: 0.75rem;
+    border-radius: 1rem;
+    font-size: 1rem;
+    font-weight: bold;
+    text-decoration: none;
+    transition: background-color 0.3s ease;
+}
+
+.todo-link {
+    background-color: #ebf8ff; 
+    color: #3182ce; 
+}
+
+.todo-link:hover {
+    background-color: #bee3f8; 
+}
+
+.calendar-link {
+    background-color: #f0fff4;
+    color: #38a169; 
+}
+
+.calendar-link:hover {
+    background-color: #c6f6d5;
+}
+
+/* Motivation Widget */
+.motivation-widget {
+    background-color: white;
+    padding: 1.5rem;
+    border-radius: 1rem;
+    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+    grid-column: span 2;
+}
+
+.motivation-title {
+    font-size: 1.25rem;
+    font-weight: 600;
+    margin-bottom: 1rem;
+}
+
+.motivation-quote {
+    font-style: italic;
+    color: #718096; 
+    border-left: 4px solid #3182ce; 
+    padding-left: 1rem;
+}
+.striker {
+    text-decoration: line-through;
+    color: #6c757d;
+}
+.add-task-form {
+    max-width: 400px;
+    margin-bottom: 20px;
+    padding: 10px;
+    background-color: #f8f9fa;
+    border-radius: 8px;
+    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+}
+
+.add-task-form input, .add-task-form button {
+    width: 100%;
+}
+
+.todo-table {
+    width: 100%;
+    margin-top: 20px;
+    font-size: 1.1rem;
+}
+
+.todo-table th, .todo-table td {
+    padding: 12px;
+    text-align: center;
+}
+
+.todo-table .table-light {
+    background-color: #f7f7f7;
+    font-weight: bold;
+}
+
+.todo-table .table-secondary {
+    background-color: #f1f1f1;
+}
+
+.todo-table .btn {
+    transition: all 0.3s ease;
+}
+
+.todo-table .btn:hover {
+    opacity: 0.8;
+    transform: scale(1.05);
+}
+/* Base button */
+.btn-uncross,
+.btn-complete,
+.btn-delete {
+    display: inline-block;
+    padding: 6px 12px;
+    border-radius: 5px;
+    font-size: 0.9rem;
+    text-decoration: none;
+    color: white;
+    transition: background-color 0.3s ease, transform 0.2s ease;
+}
+
+/*  button colors */
+.btn-complete {
+    background-color: #198754; 
+}
+.btn-uncross {
+    background-color: #ffc107; 
+}
+.btn-delete {
+    background-color: #dc3545; 
+}
+.btn-addtask {
+    background-color: #c2d1e0; 
+}
+
+
+/* Hover effects */
+.btn-complete:hover {
+    background-color: #157347;
+    transform: scale(1.05);
+}
+.btn-uncross:hover {
+    background-color: #e0a800;
+    transform: scale(1.05);
+}
+.btn-delete:hover {
+    background-color: #cd2c3c;
+    transform: scale(1.05);
+}
+.btn-addtask:hover {
+    background-color: #89badf; 
+    transform:scale(1.05);
+}
+
+.task-link:hover {
+    transform: scale(2.05);
+    color: #0d6efd; 
+}
+
+.alert {
+    border-radius: 5px;
+    background-color: #d2c2f0;
+    padding: 2px;
+
+}
+
+.btn-close:hover {
+    color: #b32fac;
+    transform: scale(1.05);
+}
+
+.lnk-to-cal:hover{
+    color: rgb(241, 42, 55);
+    transform:sale(1.05);
+}
+
+.lnk-to-cal{
+    color:#0d6efd;
+    size:10px;
+    font-weight:bold;
+}
+
+
+
+/*  Desktop Nav on larger screens */
+@media (min-width: 768px) {
+    .desktop-nav {
+        display: flex;
+    }
+
+    .mobile-menu-btn {
+        display: none;
+    }
+
+    .mobile-menu {
+        display: none;
+    }
+}
+
+/*  Mobile Menu on small screens */
+@media (max-width: 767px) {
+    .mobile-menu {
+        display: block;
+    }
+}
